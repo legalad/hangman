@@ -61,7 +61,7 @@ body{
 }
 
 .reset{
-    color: green;
+    color: #0d47a1;
     cursor: pointer;
     font-size: 48px;
 }
@@ -106,6 +106,10 @@ nav span {
     text-decoration: none;
     color: #0d47a1
 }
+nav span:hover{
+    color: #08306d;
+    cursor: pointer;
+}
 .categories{
     display: flex;
     justify-content: space-between;
@@ -115,7 +119,10 @@ nav span {
 }
 .category{
     display: flex;
-
     color: white;
     font-size: 18px;
+}
+.category:hover{
+    color: #cccccc;
+    cursor: pointer;
 }
