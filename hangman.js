@@ -24,7 +24,7 @@ window.onload = start;
 function start(){
     let content_div = "";
     for(let i=0; i < 26; i++){
-        content_div += '<div class="letter" id="lett'+ i +'" onclick="check('+i+')">'+String.fromCharCode(65+i)+'</div>'
+        content_div += '<div class="letter" id="lett'+ i +'" onclick="check('+i+')">'+String.fromCharCode(65+i)+'</div>';
     }
     document.getElementById("alphabet").innerHTML = content_div;
     write_catchphrase();

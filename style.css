@@ -21,6 +21,8 @@ body{
     width: 900px;
     margin-left: auto;
     margin-right: auto;
+    position: center;
+    padding: 10px;
 }
 #board{
     width: 900px;
@@ -32,13 +34,13 @@ body{
 }
 #gibbet{
     float: left;
-    width: 450px;
+    width: 440px;
     text-align: center;
     min-height: 280px;
 }
 #alphabet{
-    float: left;
-    width: 450px;
+    float: right;
+    width: 440px;
     text-align: center;
     min-height: 280px;
 }
@@ -65,4 +67,41 @@ body{
 }
 .reset:hover{
     color: white;
+}
+@media (max-width: 900px) {
+    .container{
+        width: 100%;
+        display: block;
+    }
+    #board{
+        width: 100%;
+    }
+    #gibbet{
+        width: 100%;
+    }
+    #alphabet{
+        float: none;
+        margin: auto;
+        width: 50%;
+    }
+}
+nav {
+    display: flex; /* 1 */
+    justify-content: space-between; /* 2 */
+    padding: 10px 10px; /* 3 */
+}
+
+nav ul {
+    display: flex;
+    list-style: none; /* 6 */
+    margin-top: 10px;
+}
+
+nav li {
+    padding-left: 15px; /* 7! */
+
+}
+nav span {
+    text-decoration: none;
+    color: #0d47a1
 }
