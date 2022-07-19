@@ -1,3 +1,13 @@
+//keyboard press
+window.addEventListener('keypress', e=>{
+    let code = e.keyCode - 97;
+    if (code >= 0 & code < 26 && alphabet_on === true){
+        check(code);
+    }
+    if (code === 18 && alphabet_on === false){
+        location.reload();
+    }
+})
 //data
 var categoryArr = [];
 var proverbsArr = [];
@@ -18,7 +28,7 @@ moviesArr.push("The Shawshank Redemption", "The Godfather", "The Dark Night", "P
                 "Goodfellas", "City of God", "Star Wars", "Terminator", "The Pianist", "Parasite", "Gladiator", "The Prestige", "Whiplash");
 categoryArr.push(proverbsArr, fruitsArr, jobsArr, moviesArr);
 
-
+//variables
 var catchphrase = proverbsArr[Math.floor(Math.random()*proverbsArr.length)];
 catchphrase = catchphrase.toUpperCase();
 var errors = 0;
@@ -27,6 +37,11 @@ for (let i=0; i<catchphrase.length; i++){
     if (catchphrase.charAt(i) === " ") covered_catchphrase += " ";
     else covered_catchphrase += "_";
 }
+var alphabet_on = true;
+var alphabet_checked = false;
+
+
+//func
 function write_catchphrase(){
     document.getElementById("board").innerHTML = covered_catchphrase;
 }
@@ -38,6 +53,17 @@ function write_new_catchphrase(nr) {
         else covered_catchphrase += "_";
     }
         document.getElementById("board").innerHTML = covered_catchphrase;
+    if (alphabet_on !== true || alphabet_checked === true){
+        let content_div = "";
+        for (let i = 0; i < 26; i++) {
+            content_div += '<div class="letter" id="lett' + i + '" onclick="check(' + i + ')">' + String.fromCharCode(65 + i) + '</div>';
+        }
+        document.getElementById("alphabet").innerHTML = content_div;
+        alphabet_on = true;
+        errors = 0;
+        document.getElementById("gibbet").innerHTML = '<img src="img/s0.jpg" alt="" />';
+
+    }
     }
 
     function write_category() {
@@ -76,32 +102,35 @@ function write_new_catchphrase(nr) {
         }
         let element = "lett" + nr;
         if (flag) {
+            alphabet_checked = true;
             document.getElementById(element).style.background = "#003300";
             document.getElementById(element).style.color = "#00C000";
             document.getElementById(element).style.border = "3px solid #00C000";
             document.getElementById(element).style.cursor = "default";
             write_catchphrase();
         } else {
+            alphabet_checked = true;
             document.getElementById(element).style.background = "#7e2020";
             document.getElementById(element).style.color = "#fe4040";
             document.getElementById(element).style.border = "3px solid #fe4040";
-            document.getElementById(element).style.cursor = "default";
             document.getElementById(element).setAttribute("onclick", ";");
-
-            changeImg();
+            if (document.getElementById(element).style.cursor.valueOf() !== "default"){
+            changeImg();}
+            document.getElementById(element).style.cursor = "default";
         }
         //win
-        if (catchphrase == covered_catchphrase) {
+        if (catchphrase === covered_catchphrase) {
+            alphabet_on = false;
             document.getElementById("alphabet").innerHTML = "You win! <br/>The answer was:</br> " + catchphrase + '<br/><br/><span class="reset" onclick="location.reload()">Play again?</span>';
         }
         //loose
         if (errors >= 9) {
+            alphabet_on = false;
             document.getElementById("alphabet").innerHTML = "You loose! <br/>The answer was:<br/> " + catchphrase + '<br/><br/><span class="reset" onclick="location.reload()">Play again?</span>';
         }
 
         function changeImg() {
             let image = "img/s" + (++errors) + ".jpg";
             document.getElementById("gibbet").innerHTML = '<img src="' + image + '" alt="" />';
-            setTimeout("changeImg()", 50000);
         }
 }
