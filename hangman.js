@@ -4,7 +4,7 @@ window.addEventListener('keypress', e=>{
     if (code >= 0 & code < 26 && alphabet_on === true){
         check(code);
     }
-    if (code === 18 && alphabet_on === false){
+    if (code === 17 && alphabet_on === false){
         location.reload();
     }
 })
