@@ -26,7 +26,7 @@ body{
 }
 #board{
     width: 900px;
-    margin-top: 40px;
+    margin-top: 0px;
     margin-bottom: 40px;
     text-align: center;
     font-size: 48px;
@@ -86,14 +86,15 @@ body{
     }
 }
 nav {
-    display: flex; /* 1 */
-    justify-content: space-between; /* 2 */
-    padding: 10px 10px; /* 3 */
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+    border-bottom: solid 3px white;
 }
 
 nav ul {
     display: flex;
-    list-style: none; /* 6 */
+    list-style: none;
     margin-top: 10px;
 }
 
@@ -104,4 +105,17 @@ nav li {
 nav span {
     text-decoration: none;
     color: #0d47a1
+}
+.categories{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+    border-bottom: solid 3px white;
+
+}
+.category{
+    display: flex;
+
+    color: white;
+    font-size: 18px;
 }
