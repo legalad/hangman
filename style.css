@@ -3,6 +3,7 @@
     --dark: #000000;
     --primary: #e7e9eb;
     --light: #ffffff;
+    --secondary: #0d47a1;
 }
 *{
     margin: 0;
@@ -26,7 +27,7 @@ body{
 }
 #board{
     width: 900px;
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 40px;
     text-align: center;
     font-size: 48px;
@@ -61,7 +62,7 @@ body{
 }
 
 .reset{
-    color: #0d47a1;
+    color: var(--secondary);
     cursor: pointer;
     font-size: 48px;
 }
@@ -104,7 +105,7 @@ nav li {
 }
 nav span {
     text-decoration: none;
-    color: #0d47a1
+    color: var(--secondary);
 }
 nav span:hover{
     color: #08306d;
@@ -114,12 +115,12 @@ nav span:hover{
     display: flex;
     justify-content: space-between;
     padding: 10px 10px;
-    border-bottom: solid 3px white;
+    border-bottom: solid 3px var(--light);
 
 }
 .category{
     display: flex;
-    color: white;
+    color: var(--light);
     font-size: 18px;
 }
 .category:hover{

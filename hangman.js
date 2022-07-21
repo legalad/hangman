@@ -25,7 +25,7 @@ jobsArr.push("Teacher", "Soldier", "Scientist", "Waiter", "Waitress", "Worker", 
             "Explorer", "Farmer", "Fireman", "Footballer", "Hairdresser", "Housemaid", "Judge", "Lawyer", "Musician", "News reporter",
             "Nurse", "Director", "Photographer", "Pilot", "Politician", "Postman", "Receptionist", "Repairman", "Sailor", "Tour guide");
 moviesArr.push("The Shawshank Redemption", "The Godfather", "The Dark Night", "Pulp Fiction", "Forrest Gump", "Fight CLub", "Inception", "The Matrix",
-                "Goodfellas", "City of God", "Star Wars", "Terminator", "The Pianist", "Parasite", "Gladiator", "The Prestige", "Whiplash");
+                "Goodfellas", "City of God", "Star Wars", "Terminator", "The Pianist", "Parasite", "Gladiator", "The Prestige", "Whiplash", "Ice Age", "Frozen");
 categoryArr.push(proverbsArr, fruitsArr, jobsArr, moviesArr);
 
 //variables
